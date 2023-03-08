@@ -35,7 +35,7 @@ namespace WpfApp1
             var channel = ably.Channels.Get("quickstart");
             channel.Subscribe(message =>
             {
-                Dispatcher.Invoke(() => txtMessages.Text += ("Received a greeting message in realtime: {0}", message.Data));
+                Dispatcher.Invoke(() => txtMessages.Text += $"Received a greeting message in realtime: {message.Data}\n");
             });
 
             ////for testing mux video streaming
